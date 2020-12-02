@@ -1,0 +1,115 @@
+body {
+    background-color: #c9c9c9;
+    background-size: cover;
+    background-image: url(img/bcgrnd.jpg);
+    background-repeat: no-repeat;
+
+}
+
+.calc {
+    margin-left: 33vw;
+    margin-top: 5vh;
+    height: 90vh;
+    width: 60vh;
+    background: white;
+    outline: 2px solid black;
+    opacity: 0;
+    /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s;
+    /*Скорость перехода состояния элемента*/
+    animation: show 1s 1;
+    /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards;
+    /* Чтобы элемент оставался в конечном состоянии анимации */
+
+}
+
+.display {
+    padding-top: 15%;
+    padding-right: 2%;
+    text-align: end;
+    width: 98%;
+    height: 10%;
+    background: #4f423c;
+    color: white;
+    font-size: 500%;
+    font-family: monospace;
+}
+
+.keyboard {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.button {
+    cursor: pointer;
+    width: 25%;
+    height: 20%;
+    outline: 2px solid black;
+    outline-offset: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+}
+
+.number {
+    background: #e6e3da;
+}
+
+.operation {
+    background: #a6a090;
+}
+
+.p_button {
+
+    font-size: 300%;
+    font-family: monospace;
+}
+.p_button::selection {
+   background: transparent;
+}
+
+.button:hover {
+
+    outline: 4px solid #524f47;
+    outline-offset: 2px;
+    z-index: 1000;
+    transition: 0.1s;
+}
+
+.button:active {
+    box-shadow: inset 4px 4px 25px 4px #7A796A;
+    transition: 0.1s;
+}
+
+
+@media screen and (max-width: 1368px) {
+    body {
+        background-size: auto 100vh;
+        background-color: #c9c9c9;
+        background-repeat: no-repeat;
+        background-image: url(img/bcgrnd.jpg);
+    }
+
+    .calc {
+        margin-left: 3%;
+        margin-top: 10%;
+        height: 135vw;
+        width: 90vw;
+        background: white;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
