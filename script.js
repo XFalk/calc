@@ -46,7 +46,7 @@ function operate() {
                 i = 0;
             }
         }
-        display.textContent = +mas[0];
+        display.textContent = +mas[0].toFixed(10);;
     }
 function getPercent(){
     
