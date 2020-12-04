@@ -9,9 +9,15 @@ const backspace = document.querySelector(`#backspace`);
 backspace.addEventListener('click', delSymbol);
 const equal = document.querySelector(`#equal`);
 equal.addEventListener('click', operate);
-
+const back = document.querySelector(`#back`);
+back.addEventListener('click', backSave);
+let save;
+function backSave(){
+    display.textContent = save;
+}
 function operate() {
     let result;
+    save = display.textContent;
     let mas = ('0' + display.textContent).split(' ');
     if (mas[0].includes('-')) {
            mas[0] = mas[0].slice(1);
@@ -42,14 +48,18 @@ function operate() {
         }
         display.textContent = +mas[0];
     }
-
+function getPercent(){
+    
+}
     function delSymbol() {
+        save = display.textContent;
         do
             display.textContent = `${ display.textContent.slice(0,-1)}`
         while (display.textContent.slice(-1) === " ");
     }
 
     function clearDisplay() {
+        save = display.textContent;
         display.innerHTML = ``;
     }
 
@@ -58,6 +68,7 @@ function operate() {
     }
 
     function getDif(x, y) {
+        
         return x - y;
     }
 
@@ -66,6 +77,10 @@ function operate() {
     }
 
     function getDivis(x, y) {
+        if (y===0){ 
+            alert('Ты что, решил делить на 0? Не надо так!!!'); 
+        clearDisplay();
+        return null;} else
         return x / y;
     }
 
