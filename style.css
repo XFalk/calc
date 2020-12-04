@@ -85,6 +85,14 @@ body {
     box-shadow: inset 4px 4px 25px 4px #7A796A;
     transition: 0.1s;
 }
+.playing{
+        outline: 4px solid #524f47;
+    outline-offset: 2px;
+    z-index: 1000;
+    transition: 0.1s;
+        box-shadow: inset 4px 4px 25px 4px #7A796A;
+    transition: 0.1s;
+}
 
 
 @media screen and (max-width: 1368px) {
