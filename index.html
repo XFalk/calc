@@ -6,20 +6,20 @@
     <title>Калькулятор</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script async src="script.js"></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='favicon.ico' />
 </head>
 
 <body>
     <div class="calc">
         <div class='display'></div>
         <div class='keyboard'>
-            <div class='button operation' data-count='%'>
-                <p class="p_button">%</p>
-            </div>
             <div data-key='27' data-count='' class='button operation service' id='clear'>
                 <p class="p_button">C</p>
             </div>
+            <div class='button operation service' id='back'>
+                <p class="p_button">↶</p>
+            </div>
+
             <div data-key='8' data-count='' class='button operation service' id='backspace'>
                 <p class="p_button">←</p>
             </div>
@@ -35,7 +35,7 @@
             <div data-key='105' data-count='9' class='button number'>
                 <p class="p_button">9</p>
             </div>
-            <div data-key='106' data-count='*'class='button operation'>
+            <div data-key='106' data-count='*' class='button operation'>
                 <p class="p_button">×</p>
             </div>
             <div data-key='100' data-count='4' class='button number'>
@@ -62,13 +62,13 @@
             <div data-key='107' data-count='+' class='button operation'>
                 <p class="p_button">+</p>
             </div>
-            <div class='button number service' id='back'>
-                <p class="p_button">↶</p>
+            <div class='button number service' id='sign' data-count=''>
+                <p class="p_button">±</p>
             </div>
             <div data-key='96' data-count='0' class='button number'>
                 <p class="p_button">0</p>
             </div>
-            <div data-key='110' data-count='.' class='button number'>
+            <div data-key='110' data-count='.' class='button number' id='separator'>
                 <p class="p_button">,</p>
             </div>
             <div data-key='13' data-count='=' class='button service' id='equal' style="background: #6e6651">
