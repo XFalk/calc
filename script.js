@@ -50,15 +50,16 @@ function operate() {
             i = 0;
         }
     }
-    display.textContent = +mas[0].toFixed(10);;
+    display.textContent = +mas[0].toFixed(10);
 }
 
 
 function delSymbol() {
     save = display.textContent;
-    do
-        display.textContent = `${ display.textContent.slice(0,-1)}`
-    while (display.textContent.slice(-1) === " ");
+   if (display.textContent.slice(-1)!==' '){
+        display.textContent = `${ display.textContent.slice(0,-1)}`;
+   } else
+       { display.textContent = `${ display.textContent.slice(0,-3)}`;}
 }
 
 function changeSign() {
@@ -133,7 +134,7 @@ function addText(e) {
 
     if (e.currentTarget.className.includes(`operation`)) {
         let mas = (display.textContent).split(' ');
-        if (mas[mas.length - 2] === '+' || mas[mas.length - 2] === '-' || mas[mas.length - 2] === '*' || mas[mas.length - 2] === '/' || mas[mas.length - 2] === '+') {
+        if ((mas[mas.length - 2] === '+' || mas[mas.length - 2] === '-' || mas[mas.length - 2] === '*' || mas[mas.length - 2] === '/' || mas[mas.length - 2] === '+')&& mas[mas.length-1]==='') {
             mas[mas.length - 2] = e.currentTarget.dataset.count;
             display.textContent = mas.join(` `);
         } else {
@@ -159,7 +160,7 @@ function addTextKey(e) {
 
     if (e.className.includes(`operation`)) {
         let mas = (display.textContent).split(' ');
-        if (mas[mas.length - 2] === '+' || mas[mas.length - 2] === '-' || mas[mas.length - 2] === '*' || mas[mas.length - 2] === '/' || mas[mas.length - 2] === '+') {
+        if ((mas[mas.length - 2] === '+' || mas[mas.length - 2] === '-' || mas[mas.length - 2] === '*' || mas[mas.length - 2] === '/' || mas[mas.length - 2] === '+')&& mas[mas.length-1]==='') {
             mas[mas.length - 2] = e.dataset.count;
             display.textContent = mas.join(` `);
         } else {
